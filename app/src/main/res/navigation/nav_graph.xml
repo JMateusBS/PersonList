@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_person">
+
+    <fragment
+        android:id="@+id/fragment_person"
+        android:name="com.project.pessoas.ui.fragments.PersonFragment"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" />
+    <fragment
+        android:id="@+id/fragment_new_person"
+        android:name="com.project.pessoas.ui.fragments.NewPersonFragment"
+        android:label="new_person"
+        tools:layout="@layout/fragment_new_person" />
+    <fragment
+        android:id="@+id/fragment_update_person"
+        android:name="com.project.pessoas.ui.fragments.UpdatePersonFragment"
+        android:label="update_person"
+        tools:layout="@layout/fragment_update_person" />
+</navigation>
