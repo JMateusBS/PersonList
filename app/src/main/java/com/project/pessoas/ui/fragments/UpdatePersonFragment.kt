@@ -96,10 +96,7 @@ class UpdatePersonFragment: Fragment() {
 
             R.id.btn_update_person -> {
 
-                if (personName.text.isNullOrEmpty() ||
-                    info.text.isNullOrEmpty() ||
-                    res1.text.isNullOrEmpty() ||
-                    res2.text.isNullOrEmpty()
+                if (personName.text.isNullOrEmpty() || info.text.isNullOrEmpty() || res1.text.isNullOrEmpty() || res2.text.isNullOrEmpty()
                 ) {
                     Toast.makeText(context, "Fill all the informantion", Toast.LENGTH_LONG).show()
                 } else if (
@@ -126,6 +123,7 @@ class UpdatePersonFragment: Fragment() {
                 mViewModel.deletePersonDataBase(currentPerson)
             }
         }
+//        SupportScreenManager.goTo(FragmentInfo(R.id.fragment_person))
     }
 
 }

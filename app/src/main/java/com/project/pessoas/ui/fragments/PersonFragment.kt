@@ -47,15 +47,15 @@ class PersonFragment: Fragment() {
         mRecyclerView.adapter = PersonRecyclerViewAdapter(listOf())
 
         viewLifecycleOwner.lifecycle.addObserver(mViewModel)
-        mViewModel.personList.observe(viewLifecycleOwner, mListObserver)
-        mViewModel.dataError.observe(viewLifecycleOwner, mDataErrorObserver)
+        mViewModel.personList.observe(viewLifecycleOwner, personListObserver)
+        mViewModel.dataError.observe(viewLifecycleOwner, personDataErrorObserver)
         mViewModel.isUploadSuccess.observe(viewLifecycleOwner, mUploadSuccess)
 
 
         return view
     }
 
-    private val mListObserver = Observer<List<PersonEntity>>{ personList ->
+    private val personListObserver = Observer<List<PersonEntity>>{ personList ->
         mRecyclerView.apply {
             adapter = PersonRecyclerViewAdapter(personList)
             mRecyclerView.visibility = View.VISIBLE
@@ -63,7 +63,7 @@ class PersonFragment: Fragment() {
 
     }
 
-    private val mDataErrorObserver = Observer<Boolean>{ error ->
+    private val personDataErrorObserver = Observer<Boolean>{ error ->
         if(error) {
             Toast.makeText(context, "Loading error", Toast.LENGTH_SHORT).show()
             mViewModel.clearError()

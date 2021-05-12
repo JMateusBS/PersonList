@@ -24,18 +24,13 @@ class PersonRecyclerViewAdapter(val person: List<PersonEntity>) : RecyclerView.A
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.bind(
-            person[position].codPessoa,
-            person[position].nomePessoa,
-            person[position].complemento,
-            person[position].reservado1,
-            person[position].reservado2
+            person[position]
         )
     }
 
     override fun getItemCount(): Int {
         return person.size
     }
-
 }
 
 
@@ -47,25 +42,22 @@ class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val reservado1 = itemView.findViewById<TextView>(R.id.person_reservado1)
     private val reservado2 = itemView.findViewById<TextView>(R.id.person_reservado2)
 
-    fun bind(id: Long, name: String, info: String, res1: String, res2: String) {
+    fun bind(person: PersonEntity) {
 
-
-        mId.text = id.toString()
-        mName.text = name
-        mInfo.text = info
-        reservado1.text = res1
-        reservado2.text = res2
+        mId.text = person.codPessoa.toString()
+        mName.text = person.nomePessoa
+        mInfo.text = person.complemento
+        reservado1.text = person.reservado1
+        reservado2.text = person.reservado2
 
         itemView.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable(
                 PERSON_BUNDLE,
-                PersonEntity(id, name, info, res1, res2)
+                person
             )
-
             SupportScreenManager.goTo(FragmentInfo(R.id.fragment_update_person, bundle))
         }
-
     }
 
 }

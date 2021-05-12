@@ -55,7 +55,8 @@ class NewPersonFragment: Fragment() {
 
             R.id.save_new_person -> {
 
-                if (personName.text.isNullOrEmpty() || info.text.isNullOrEmpty() || res1.text.isNullOrEmpty() || res2.text.isNullOrEmpty()) {
+                if (personName.text.isNullOrEmpty() ||
+                    info.text.isNullOrEmpty() || res1.text.isNullOrEmpty() || res2.text.isNullOrEmpty()) {
                     Toast.makeText(context, "Fill all the information", Toast.LENGTH_LONG).show()
                 } else {
                     val newPerson = PersonEntity(

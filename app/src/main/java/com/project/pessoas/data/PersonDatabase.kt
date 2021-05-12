@@ -22,9 +22,6 @@ abstract class PersonDatabase: RoomDatabase() {
         private var dataBase: PersonDatabase? = null
 
         fun getDataBase(application: Application): PersonDatabase {
-            if (dataBase != null) {
-                return dataBase!!
-            }
             dataBase = Room.databaseBuilder(
                 application,
                 PersonDatabase::class.java,

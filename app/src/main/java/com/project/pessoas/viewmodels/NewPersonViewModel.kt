@@ -35,7 +35,6 @@ class NewPersonViewModel(application: Application): AndroidViewModel(application
                     mutableDataError.postValue(true)
                 }
             ))
-
     }
 
     fun updateTXTFileFromDB(){
@@ -69,6 +68,7 @@ class NewPersonViewModel(application: Application): AndroidViewModel(application
         mutableDataError.value = false
         mutablePersonSaved.value = false
     }
+
     override fun onCleared() {
         super.onCleared()
         composeDispose.clear()

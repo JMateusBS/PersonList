@@ -8,27 +8,45 @@
 
     <TextView
     android:id="@+id/new_person_title"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:text="New Person"
+    android:textAlignment="center"
     android:padding="8dp"
+        android:background="@color/colorPrimary"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     android:textSize="22sp"
     android:textStyle="bold"
     android:textAllCaps="true"
-    android:textColor="@color/black"/>
+    android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/person_reservado1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:hint="Reserved"
+        android:inputType="text"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person_info" />
 
     <EditText
         android:id="@+id/person_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:background="@color/white"
         android:hint="Person Name"
         android:inputType="text"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_person_title" />
 
@@ -36,46 +54,35 @@
         android:id="@+id/person_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:hint="Complement"
-        app:layout_constraintTop_toBottomOf="@id/person_name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/white"
+        android:inputType="text"
         android:padding="8dp"
-        android:inputType="text"/>
-
-    <EditText
-        android:id="@+id/person_reservado1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Reserved"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/person_info"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/white"
-        android:padding="8dp"
-        android:inputType="text"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person_name" />
 
     <EditText
         android:id="@+id/person_reservado2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Reserved"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/person_reservado1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
+        android:hint="Reserved"
+        android:inputType="text"
         android:padding="8dp"
-        android:inputType="text" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/person_reservado1" />
 
     <Button
         android:id="@+id/save_new_person"
         android:text="SAVE"
         android:backgroundTint="@color/green"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="120dp"
         app:layout_constraintBottom_toBottomOf="parent"

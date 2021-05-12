@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             })
         )
     }
-
+    override fun onBackPressed() {
+        SupportScreenManager.goToMain()
+    }
 
 }

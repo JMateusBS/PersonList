@@ -37,6 +37,10 @@ class UpdatePersonViewModel (application: Application): AndroidViewModel(applica
                 },
                 { err ->
                     mutableDataError.postValue(true)
+                    Log.d(
+                        "ERROR",
+                        err.message ?: "ERROR UPDATE"
+                    )
                 }
             ))
     }
@@ -52,6 +56,10 @@ class UpdatePersonViewModel (application: Application): AndroidViewModel(applica
                 },
                 { err ->
                     mutableDataError.postValue(true)
+                    Log.d(
+                        "ERROR",
+                        err.message ?: "ERROR DELETE"
+                    )
                 }
             ))
     }
@@ -104,6 +112,10 @@ class UpdatePersonViewModel (application: Application): AndroidViewModel(applica
         mutablePersonDeleted.value = false
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    fun dispose() {
+        composeDispose.dispose()
+    }
 
     override fun onCleared() {
         super.onCleared()
